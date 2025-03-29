@@ -4,6 +4,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 docker-compose --project-name frappe --file docker-compose.yaml up --detach
+docker-compose --project-name frappe --file docker-compose.yaml down
 
 podman compose --project-name frappe --file docker-compose.yaml up --detach
 podman compose --project-name frappe --file docker-compose.yaml down
