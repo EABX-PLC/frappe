@@ -3,6 +3,8 @@ python3 -m venv venv
 
 source venv/bin/activate
 
+docker-compose --project-name frappe --file docker-compose.yaml up --detach
+
 podman compose --project-name frappe --file docker-compose.yaml up --detach
 podman compose --project-name frappe --file docker-compose.yaml down
 
@@ -18,5 +20,5 @@ podman compose --project-name frappe --file docker-compose.yaml down --volumes -
 podman container list
 
 # Logs
-podman container logs --tail=100 frappe_backend_1 > frappe_backend_1_logs.txt 2>&1
+podman container logs --tail=100 frappe_backend_1 > logs/frappe_backend_1_logs.txt 2>&1
 ```
